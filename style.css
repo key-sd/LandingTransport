@@ -1,0 +1,410 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eef3fb;
+}
+
+/*Inician estilos para el carrusel*/
+.carrusel {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.diapositiva {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+.diapositiva.activa {
+  opacity: 1;
+}
+
+.diapositiva::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 22, 55, 0.60);
+}
+/*Imagenes como fondo en el carrusel*/
+.diapositiva-1 {
+  background-image: url(img/ciudad-universitaria.jpg);
+}
+.diapositiva-2 {
+  background-image: url(img/central.jpg);
+}
+.diapositiva-3 {
+  background-image: url(img/anchico.webp);
+}
+
+.contenido-diapositiva {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.logo-esquina {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  z-index: 3;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+
+.subtitulo-slide {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 30px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.contenido-diapositiva h1 {
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.contenido-diapositiva h1 strong {
+  display: block;
+  font-weight: 800;
+}
+
+.dorado {
+  color: #f5c518;
+  font-weight: 900;
+}
+
+.campus-nombre {
+  margin-top: 12px;
+  color: #ffd84d;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Flechas dentro del carrusel */
+.flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.flecha:hover {
+  background: rgba(245, 197, 24, 0.55);
+}
+
+.flecha-anterior {
+  left: 18px;
+}
+.flecha-siguiente {
+  right: 18px;
+}
+
+/* Puntos dentro del carrusel*/
+.puntos {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.punto {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.punto.activo {
+  background: #f5c518;
+  transform: scale(1.3);
+}
+
+/* contenedor donde van las tarjetaa*/
+.contenedor {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/*Secciones que separan el contenido*/
+.seccion {
+  padding: 50px 0 36px;
+}
+
+.subtitulo-seccion {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #5a7099;
+  margin-bottom: 4px;
+}
+
+.titulo-seccion {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0d2346;
+  margin-bottom: 28px;
+  margin-top: 4px;
+}
+
+/* tarjetas de sedes */
+.tarjetas-sedes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.tarjeta-sede {
+  border-radius: 14px;
+  background: linear-gradient(145deg, #0d2346, #1a4fa0);
+  padding: 30px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 20px rgba(13, 35, 70, 0.12);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.tarjeta-sede:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(13, 35, 70, 0.2);
+}
+
+.icono-sede {
+  font-size: 32px;
+}
+
+.nombre-sede {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.boton-ubicacion {
+  background: #f5c518;
+  color: #0d2346;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 20px;
+  padding: 7px 18px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s;
+}
+
+.boton-ubicacion:hover {
+  background: #ffd84d;
+}
+
+/* tarjetas de horarios */
+.tarjeta-horario {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(13, 35, 70, 0.12);
+  margin-bottom: 20px;
+}
+
+.encabezado-horario {
+  background: #0d2346;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 11px 18px;
+  letter-spacing: 0.4px;
+}
+
+.cuerpo-horario {
+  padding: 22px;
+}
+
+.dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.columna-horario {
+  padding: 4px 18px;
+  border-right: 1px solid #dde8f4;
+}
+
+.columna-horario:last-child {
+  border-right: none;
+}
+
+.titulo-columna {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0d2346;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.tabla-horario {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-horario td {
+  font-size: 0.76rem;
+  padding: 6px 4px;
+  color: #0d1f3c;
+  border-bottom: 1px solid #edf2fa;
+}
+
+.tabla-horario td:first-child {
+  font-weight: 600;
+  color: #2c4a7a;
+  width: 55%;
+}
+
+.tabla-horario td:last-child {
+  font-weight: 700;
+  color: #1a4fa0;
+  text-align: right;
+}
+
+.nota-horario {
+  font-size: 0.68rem;
+  color: #5a7099;
+  text-align: center;
+  margin-top: 12px;
+  padding: 8px 10px;
+  background: #f0f5fc;
+  border-radius: 8px;
+  line-height: 1.45;
+}
+
+/* tarjetas de los contactos */
+.tarjetas-contacto {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.tarjeta-contacto {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px 18px;
+  box-shadow: 0 4px 20px rgba(13, 35, 70, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  border-top: 3px solid #f5c518;
+  transition: transform 0.2s;
+}
+
+.tarjeta-contacto:hover {
+  transform: translateY(-4px);
+}
+
+/*Para seccion de contactos*/
+.icono-contacto {
+  width: 48px;
+  height: 48px;
+  background: #0d2346;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.label-contacto {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #0d2346;
+}
+
+.valor-contacto {
+  font-size: 0.78rem;
+  color: #5a7099;
+}
+
+/*footer */
+.footer {
+  background: #0d2346;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  padding: 22px 20px;
+  font-size: 0.8rem;
+  letter-spacing: 0.4px;
+}
+
+.footer span {
+  color: #f5c518;
+  font-weight: 700;
+}
+
+/* diseño responsivo*/
+@media (max-width: 640px) {
+  .tarjetas-sedes,
+  .dos-columnas,
+  .tarjetas-contacto {
+    grid-template-columns: 1fr;
+  }
+
+  .columna-horario {
+    border-right: none;
+    border-bottom: 1px solid #dde8f4;
+    padding: 12px 4px;
+  }
+
+  .columna-horario:last-child {
+    border-bottom: none;
+  }
+
+  .carrusel {
+    height: 320px;
+  }
+}
