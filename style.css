@@ -70,13 +70,6 @@ body {
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
 }
 
-.subtitulo-slide {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 30px;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-}
-
 .contenido-diapositiva h1 {
   font-size: clamp(1.6rem, 4vw, 2.8rem);
   font-weight: 400;
@@ -92,13 +85,6 @@ body {
 .dorado {
   color: #f5c518;
   font-weight: 900;
-}
-
-.campus-nombre {
-  margin-top: 12px;
-  color: #ffd84d;
-  font-weight: 600;
-  font-size: 0.9rem;
 }
 
 /* Flechas dentro del carrusel */
@@ -166,7 +152,7 @@ body {
 
 /*Secciones que separan el contenido*/
 .seccion {
-  padding: 50px 0 36px;
+  padding: 10px 0 20px;
 }
 
 .subtitulo-seccion {
@@ -248,7 +234,7 @@ body {
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(13, 35, 70, 0.12);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .encabezado-horario {
@@ -261,6 +247,71 @@ body {
   letter-spacing: 0.4px;
 }
 
+.dia-des{
+  border-bottom: 1px solid #dde8f4;
+  margin-bottom: 6px;
+}
+
+.dia-des:last-child {
+  border-bottom: none;
+}
+
+.btn-des {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.18s;
+}
+/*cambiar el fondo al pasar el mouse o cuando esté abierto*/
+.btn-des:hover,
+.btn-des.abierto {
+  background: #f0f5fc;
+}
+
+.dia-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0d2346;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/*para los badges de los días */
+.dia-badge {
+  background: #f5c518;
+  color: #0d2346;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/*Flecha para desplegar el contenido de los horarios*/
+.des-chevron::before {
+  content: "▼";
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+/*cuando esté abierto se muestra la flecha hacia arriba*/
+.btn-des.abierto .des-chevron::before {
+  transform: rotate(180deg);
+}
+
+.contenido-des{
+  display: none;
+}
+.contenido-des.abierto {
+  display: block;
+}
+
 .cuerpo-horario {
   padding: 22px;
 }
@@ -268,7 +319,6 @@ body {
 .dos-columnas {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
 }
 
 .columna-horario {
@@ -281,13 +331,13 @@ body {
 }
 
 .titulo-columna {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: #0d2346;
   text-align: center;
-  margin-bottom: 14px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
-
 .tabla-horario {
   width: 100%;
   border-collapse: collapse;
@@ -311,6 +361,7 @@ body {
   color: #1a4fa0;
   text-align: right;
 }
+
 
 .nota-horario {
   font-size: 0.68rem;

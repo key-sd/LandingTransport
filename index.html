@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Horario de Transporte | UNIVO</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
+
 <body>
-<!-- CARRUSEL -->
+
     <section class="carrusel" id="carrusel">
 
         <div class="diapositiva diapositiva-1 activa">
             <div class="contenido-diapositiva">
-                <img src="img/logo.png" alt="UNIVO" class="logo-esquina"/>
+                <img src="img/logo.png" alt="UNIVO" class="logo-esquina" />
                 <span class="dorado">Bienvenido/a</span>
                 <h1>Horario de Transporte</h1>
                 <h1><span class="dorado">UNIVO</span></h1>
@@ -22,14 +24,14 @@
 
         <div class="diapositiva diapositiva-2">
             <div class="contenido-diapositiva">
-                <img src="img/logo.png" alt="UNIVO" class="logo-esquina"/>
+                <img src="img/logo.png" alt="UNIVO" class="logo-esquina" />
                 <h1>Servicio gratuito entre <strong class="dorado">Todas las Sedes</strong></h1>
             </div>
         </div>
 
         <div class="diapositiva diapositiva-3">
             <div class="contenido-diapositiva">
-                <img src="img/logo.png" alt="UNIVO" class="logo-esquina"/>
+                <img src="img/logo.png" alt="UNIVO" class="logo-esquina" />
                 <h1>Llega a tus clases <strong class="dorado">Cómodo y a Tiempo</strong></h1>
             </div>
         </div>
@@ -45,12 +47,9 @@
 
     </section>
 
-    <!-- CONTENIDO PRINCIPAL -->
     <main class="contenedor">
 
-        <!-- SEDES -->
         <section class="seccion">
-
             <p class="subtitulo-seccion">Nuestras ubicaciones</p>
             <h2 class="titulo-seccion">Nuestras sedes</h2>
 
@@ -68,70 +67,20 @@
                 </div>
 
                 <div class="tarjeta-sede">
-                    <div class="icono-sede">️🛣️️</div>
+                    <div class="icono-sede">🛣️</div>
                     <p class="nombre-sede">Campus Agronomía y Veterinaria</p>
                     <a href="https://maps.app.goo.gl/MfitZLJhNVU864Ee7" target="_blank" class="boton-ubicacion">📍 Ubicación</a>
                 </div>
             </div>
         </section>
 
-        <!-- HORARIOS -->
         <section class="seccion">
-
             <p class="subtitulo-seccion">Consulta los horarios</p>
             <h2 class="titulo-seccion">Horarios de Salida</h2>
 
-            <!-- Ciudad Universitaria -->
-            <div class="tarjeta-horario">
-                <div class="encabezado-horario">Campus Ciudad Universitaria</div>
-                <div class="columna-horario">
-                    <p class="titulo-columna">Salida de Sede Central</p>
-                    <table class="tabla-horario">
-                        <tr><td>Martes a Viernes</td><td>7:15 am / 12:20 md</td></tr>
-                        <tr><td>Sábado</td><td>6:30 am</td></tr>
-                    </table>
-                    <p class="nota-horario">Puedes abordar el transporte en el parqueo frente a la facultad de Salud</p>
-                </div>
-            </div>
-
-            <!-- Sede Central -->
-            <div class="tarjeta-horario">
-                <div class="encabezado-horario">Sede Central</div>
-                <div class="columna-horario">
-                    <p class="titulo-columna">🚌 Salida hacia Campus</p>
-                    <table class="tabla-horario">
-                        <tr><td>Martes a Viernes</td><td>7:00 am / 12:00 md</td></tr>
-                        <tr><td>Sábado</td><td>6:15 am</td></tr>
-                    </table>
-                    <p class="nota-horario">Puedes abordar el transporte en el parqueo de estudiantes</p>
-                </div>
-            </div>
-
-            <!-- Agronomía y Veterinaria -->
-            <div class="tarjeta-horario">
-                <div class="encabezado-horario">Campus Agronomía y Veterinaria</div>
-                <div class="cuerpo-horario dos-columnas">
-                    <div class="columna-horario">
-                        <p class="titulo-columna">Salida de Sede Central</p>
-                        <table class="tabla-horario">
-                            <tr><td>Martes a Viernes</td><td>7:15 am / 12:20 md</td></tr>
-                            <tr><td>Sábado</td><td>6:30 am</td></tr>
-                        </table>
-                        <p class="nota-horario">Puedes abordar el transporte en el parqueo de estudiantes</p>
-                    </div>
-                    <div class="columna-horario">
-                        <p class="titulo-columna">Salida de Campus Anchico</p>
-                        <table class="tabla-horario">
-                            <tr><td>Martes a Viernes</td><td>11:20 am / 4:20 pm</td></tr>
-                            <tr><td>Sábado</td><td>2:30 pm</td></tr>
-                        </table>
-                        <p class="nota-horario">Puedes abordar el transporte en el parqueo del campus</p>
-                    </div>
-                </div>  
-            </div>
+            <div id="contenedor-horarios"></div>
         </section>
 
-        <!-- CONTACTOS -->
         <section class="seccion">
 
             <p class="subtitulo-seccion">¿Tienes dudas?</p>
@@ -143,22 +92,24 @@
                     <p class="label-contacto">Teléfono</p>
                     <p class="valor-contacto">+503 2500-0000</p>
                 </div>
-                    <div class="tarjeta-contacto">
-                        <div class="icono-contacto">📱</div>
-                        <p class="label-contacto">WhatsApp</p>
-                        <p class="valor-contacto">+503 7700-0000</p>
-                    </div>
+
+                <div class="tarjeta-contacto">
+                    <div class="icono-contacto">📱</div>
+                    <p class="label-contacto">WhatsApp</p>
+                    <p class="valor-contacto">+503 7700-0000</p>
+                </div>
+
                 <div class="tarjeta-contacto">
                     <div class="icono-contacto">✉️</div>
                     <p class="label-contacto">Correo</p>
                     <p class="valor-contacto">transporte@univo.edu.sv</p>
                 </div>
             </div>
+
         </section>
 
     </main>
 
-<!-- PIE DE PÁGINA -->
     <footer class="footer">
         <p><span>Transporte UNIVO</span> &nbsp;|&nbsp; 2026 &nbsp;|&nbsp; Todos los derechos reservados</p>
     </footer>
@@ -166,4 +117,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
