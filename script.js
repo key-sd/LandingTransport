@@ -299,7 +299,7 @@ horarios.forEach(sede => {
   tarjeta.className = "tarjeta-horario";
 
   tarjeta.innerHTML = `<div class="encabezado-horario">${sede.sede}</div>`;
-  tarjeta.innerHTML += `<div class="titulo-columna">${sede.titulo}</p>`;
+  tarjeta.innerHTML += `<div class="titulo-columna">${sede.titulo}</div>`;
   sede.dias.forEach(dia => {
     const bloque = document.createElement("div");
     bloque.className = "dia-des";
@@ -314,7 +314,6 @@ horarios.forEach(sede => {
 
       <div class="contenido-des">
         <div class="cuerpo-horario">
-          <div class="dos-columnas">
 
             ${dia.columnas.map(col => `
               <div class="columna-horario">
@@ -327,8 +326,6 @@ horarios.forEach(sede => {
                 ${col.nota ? `<p class="nota-horario">${col.nota}</p>` : ""}
               </div>
             `).join("")}
-
-          </div>
         </div>
 
         ${sede.nota ? `<p class="nota-horario">${sede.nota}</p>` : ""}

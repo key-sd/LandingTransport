@@ -147,12 +147,12 @@ body {
 .contenedor {
   max-width: 880px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 60px 20px 0;
 }
 
 /*Secciones que separan el contenido*/
 .seccion {
-  padding: 10px 0 20px;
+  padding: 0 0 50px;
 }
 
 .subtitulo-seccion {
@@ -316,11 +316,6 @@ body {
   padding: 22px;
 }
 
-.dos-columnas {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
 .columna-horario {
   padding: 4px 18px;
   border-right: 1px solid #dde8f4;
@@ -361,7 +356,6 @@ body {
   color: #1a4fa0;
   text-align: right;
 }
-
 
 .nota-horario {
   font-size: 0.68rem;
@@ -440,7 +434,6 @@ body {
 /* diseño responsivo*/
 @media (max-width: 640px) {
   .tarjetas-sedes,
-  .dos-columnas,
   .tarjetas-contacto {
     grid-template-columns: 1fr;
   }
