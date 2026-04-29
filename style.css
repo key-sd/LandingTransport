@@ -431,7 +431,129 @@ body {
   font-weight: 700;
 }
 
-/* diseño responsivo*/
+a.valor-contacto {
+  color: #5a7099;
+  text-decoration: none;
+}
+
+a.valor-contacto:hover {
+  color: #1a4fa0;
+  text-decoration: underline;
+}
+
+/*Botón para volver arriba*/
+.btn-arriba {
+  position: fixed;
+  bottom: 75px;
+  right: 24px;
+  background: #f5c518;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(13,35,70,0.3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  z-index: 999;
+}
+
+.btn-arriba:hover {
+  background: #ffd84d;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(13,35,70,0.35);
+}
+
+.btn-arriba.visible {
+  display: flex;
+}
+
+/* dispositivos móviles */
+@media (max-width: 940px) {
+  .contenedor {
+    padding: 50px 20px 0;
+  }
+
+  .cuerpo-horario {
+    padding: 17px;
+  }
+
+  .btn-arriba {
+    width: 38px;
+    height: 38px;
+    bottom: 70px;
+    right: 6px;
+  }
+
+  .btn-arriba svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 720px) {
+  .tarjetas-sedes,
+  .tarjetas-contacto {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn-arriba {
+    width: 38px;
+    height: 38px;
+    bottom: 85px;
+    right: 14px;
+  }
+
+  .btn-arriba svg {
+    width: 16px;
+    height: 16px;
+  }
+
+}
+
+@media (max-width: 680px) {
+  .tarjetas-sedes,
+  .tarjetas-contacto {
+    grid-template-columns: 1fr;
+  }
+
+  .columna-horario {
+    border-right: none;
+    border-bottom: 1px solid #dde8f4;
+    padding: 12px 4px;
+  }
+
+  .columna-horario:last-child {
+    border-bottom: none;
+  }
+
+  .carrusel {
+    height: 300px;
+  }
+
+  .contenido-diapositiva h1 {
+    font-size: 1.4rem;
+  }
+
+  .titulo-seccion {
+    font-size: 1.2rem;
+  }
+
+  .btn-arriba {
+    width: 38px;
+    height: 38px;
+    bottom: 70px;
+    right: 6px;
+  }
+
+  .btn-arriba svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 @media (max-width: 640px) {
   .tarjetas-sedes,
   .tarjetas-contacto {
@@ -449,6 +571,26 @@ body {
   }
 
   .carrusel {
-    height: 320px;
+    height: 300px;
+  }
+
+  .contenido-diapositiva h1 {
+    font-size: 1.4rem;
+  }
+
+  .titulo-seccion {
+    font-size: 1.2rem;
+  }
+
+  .btn-arriba {
+    width: 38px;
+    height: 38px;
+    bottom: 85px;
+    right: 10px;
+  }
+
+  .btn-arriba svg {
+    width: 16px;
+    height: 16px;
   }
 }

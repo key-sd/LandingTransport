@@ -345,3 +345,18 @@ horarios.forEach(sede => {
 
   contenedor.appendChild(tarjeta);
 });
+
+//Botón para volver al inicio
+const btnArriba = document.getElementById("btnArriba");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    btnArriba.classList.add("visible");
+  } else {
+    btnArriba.classList.remove("visible");
+  }
+});
+
+btnArriba.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
