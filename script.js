@@ -297,7 +297,7 @@ const contenedor = document.getElementById("contenedor-horarios");
 horarios.forEach(sede => {
   const tarjeta = document.createElement("div");
   tarjeta.className = "tarjeta-horario";
-
+  
   tarjeta.innerHTML = `<div class="encabezado-horario">${sede.sede}</div>`;
   tarjeta.innerHTML += `<div class="titulo-columna">${sede.titulo}</div>`;
   sede.dias.forEach(dia => {

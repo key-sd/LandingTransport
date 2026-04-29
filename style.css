@@ -470,8 +470,12 @@ a.valor-contacto:hover {
   display: flex;
 }
 
-/* dispositivos móviles */
-@media (max-width: 940px) {
+/* diseños responsivos dispositivos móviles */
+@media (max-width: 1000px) {
+  .tarjetas-sedes,
+  .tarjetas-contacto {
+    grid-template-columns: repeat(3, 2fr);
+  }
   .contenedor {
     padding: 50px 20px 0;
   }
