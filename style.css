@@ -4,8 +4,14 @@
   padding: 0;
 }
 
+.raleway-all {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #eef3fb;
 }
 
@@ -471,7 +477,7 @@ a.valor-contacto:hover {
 }
 
 /* diseños responsivos dispositivos móviles */
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
   .tarjetas-sedes,
   .tarjetas-contacto {
     grid-template-columns: repeat(3, 2fr);
